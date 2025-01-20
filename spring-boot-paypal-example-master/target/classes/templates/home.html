@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #4CAF50;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border: 1px solid #4CAF50;
+        }
+
+        .icon-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+            font-size: 28px;
+        }
+
+        .icon-container i {
+            transition: transform 0.3s;
+        }
+
+        .icon-container i:hover {
+            transform: scale(1.2);
+        }
+
+        .btn {
+            background: #4CAF50;
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 15px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            input[type="text"] {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <form method="post" action="/pay">
+        <h3>Payment Form</h3>
+
+        <label>Accepted Cards</label>
+        <div class="icon-container">
+            <i class="fa fa-cc-visa" style="color:navy;"></i>
+            <i class="fa fa-cc-amex" style="color:blue;"></i>
+            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+            <i class="fa fa-cc-discover" style="color:orange;"></i>
+        </div>
+
+        <label for="price">Total</label>
+        <input type="text" id="price" name="price" value="10">
+
+        <label for="currency">Currency</label>
+        <input type="text" id="currency" name="currency" placeholder="Enter Currency">
+
+        <label for="method">Payment Method</label>
+        <input type="text" id="method" name="method" placeholder="Payment Method">
+
+        <label for="intent">Intent</label>
+        <input type="text" id="intent" name="intent" value="sale">
+
+        <label for="description">Payment Description</label>
+        <input type="text" id="description" name="description" placeholder="Payment Description">
+
+        <button type="submit" class="btn">Continue to Checkout</button>
+    </form>
+</div>
+
+</body>
+</html>
